@@ -10,7 +10,22 @@ export const CategoryInput = () => {
     );
 
     const handleCategory = e => {
-        dispatch(addProductCategory(e.target.value));
+        switch (e.target.value) {
+            case "pc-components":
+                dispatch(addProductCategory("Podzespoły komputera"));
+                break;
+            case "peripherals":
+                dispatch(addProductCategory("Urządzenia peryferyjne"));
+                break;
+            case "software":
+                dispatch(addProductCategory("Oprogramowanie"));
+                break;
+            case "other":
+                dispatch(addProductCategory("Inne"));
+                break;
+            default:
+                break;
+        }
     };
 
     return (

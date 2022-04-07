@@ -10,9 +10,11 @@ export const Summary = () => {
     );
 
     return (
-        <div>
-            <p>Łącznie produktów: {totalProducts}</p>
-            <p>Razem do zapłaty: {totalPrice}zł</p>
-        </div>
+        <tr>
+            <th>Łącznie produktów:</th>
+            <td>{totalProducts} szt.</td>
+            <th>Razem do zapłaty:</th>
+            <td>{totalPrice}zł</td>
+        </tr>
     );
 };
