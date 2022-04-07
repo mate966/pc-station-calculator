@@ -1,16 +1,18 @@
 import React from "react";
-import { NameInput } from "./NameInput";
-import { DetailsInput } from "./DetailsInput";
+import { NameInput } from "./ProductNameInput";
+import { DescribeInput } from "./DescribeInput";
 import { CategoryInput } from "./CategoryInput";
 import { PriceInput } from "./PriceInput";
+import { SubmitInput } from "./SubmitInput";
 
 export const Form = () => {
     return (
-        <div>
+        <form>
             <NameInput />
-            <DetailsInput />
+            <DescribeInput />
             <CategoryInput />
             <PriceInput />
-        </div>
+            <SubmitInput />
+        </form>
     );
 };

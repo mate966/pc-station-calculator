@@ -1,11 +1,13 @@
 import { Form } from "./components/Form";
+import { Cart } from "./components/Cart";
+import { Summary } from "./components/Summary";
 
-function App() {
+export const App = () => {
     return (
         <div className="App">
             <Form />
+            <Cart />
+            <Summary />
         </div>
     );
-}
-
-export default App;
+};
