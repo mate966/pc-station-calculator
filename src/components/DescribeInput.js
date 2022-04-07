@@ -13,14 +13,14 @@ export const DescribeInput = () => {
     };
 
     return (
-        <>
-            <label htmlFor="describe-input">Opis produktu: </label>
+        <div className="describe-input">
+            <label htmlFor="describe">Opis produktu: </label>
             <input
                 type="text"
-                id="describe-input"
+                id="describe"
                 onChange={handleDescribe}
                 value={productDescribe}
             />
-        </>
+        </div>
     );
 };

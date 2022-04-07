@@ -29,10 +29,10 @@ export const CategoryInput = () => {
     };
 
     return (
-        <>
-            <label htmlFor="category-input">Kategoria produktu: </label>
+        <div className="category-input">
+            <label htmlFor="category">Kategoria produktu: </label>
             <select
-                id="category-input"
+                id="category"
                 onChange={handleCategory}
                 defaultValue={productCategory}
             >
@@ -44,6 +44,6 @@ export const CategoryInput = () => {
                 <option value="software">Oprogramowanie</option>
                 <option value="other">Inne</option>
             </select>
-        </>
+        </div>
     );
 };

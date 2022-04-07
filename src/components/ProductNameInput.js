@@ -11,14 +11,14 @@ export const NameInput = () => {
     };
 
     return (
-        <>
-            <label htmlFor="name-input">Nazwa produktu: </label>
+        <div className="price-input">
+            <label htmlFor="name">Nazwa produktu: </label>
             <input
                 type="text"
-                id="name-input"
+                id="name"
                 onChange={handleName}
                 value={productName}
             />
-        </>
+        </div>
     );
 };

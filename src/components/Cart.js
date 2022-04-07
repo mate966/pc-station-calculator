@@ -23,25 +23,27 @@ export const Cart = () => {
                 </tr>
             </thead>
             <tbody>
-                {cart.map((item, id) => {
-                    return (
-                        <tr className="product" key={id}>
-                            <td>{id + 1}</td>
-                            <td>Nazwa produktu: {item.productName}</td>
-                            <td>Opis: {item.productDescribe}</td>
-                            <td>Kategoria: {item.productCategory}</td>
-                            <td>Cena: {item.productPrice}zł</td>
-                            <td>
-                                <button onClick={() => handleDelete(id)}>
-                                    Usuń
-                                </button>
-                            </td>
-                        </tr>
-                    );
-                }) && (
+                {cart.length === 0 ? (
                     <tr>
-                        <td colSpan="5">Twój koszyk jest pusty!</td>
+                        <td colSpan={5}>Twój koszyk jest pusty.</td>
                     </tr>
+                ) : (
+                    cart.map((item, id) => {
+                        return (
+                            <tr className="product" key={id}>
+                                <td>{id + 1}</td>
+                                <td>Nazwa produktu: {item.productName}</td>
+                                <td>Opis: {item.productDescribe}</td>
+                                <td>Kategoria: {item.productCategory}</td>
+                                <td>Cena: {item.productPrice}zł</td>
+                                <td>
+                                    <button onClick={() => handleDelete(id)}>
+                                        Usuń
+                                    </button>
+                                </td>
+                            </tr>
+                        );
+                    })
                 )}
             </tbody>
             <tfoot>
