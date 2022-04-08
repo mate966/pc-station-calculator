@@ -1,27 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import { addProductCategory } from "../features/productCategorySlice";
+import { addProduct } from "../../features/productSlice";
 
 export const CategoryInput = () => {
     const dispatch = useDispatch();
-    const productCategory = useSelector(
-        state => state.category.productCategory
-    );
+    const productCategory = useSelector(state => state.product.category);
 
     const handleCategory = e => {
         switch (e.target.value) {
             case "pc-components":
-                dispatch(addProductCategory("Podzespoły komputera"));
+                dispatch(addProduct({ category: "Podzespoły komputera" }));
                 break;
             case "peripherals":
-                dispatch(addProductCategory("Urządzenia peryferyjne"));
+                dispatch(addProduct({ category: "Urządzenia peryferyjne" }));
                 break;
             case "software":
-                dispatch(addProductCategory("Oprogramowanie"));
+                dispatch(addProduct({ category: "Oprogramowanie" }));
                 break;
             case "other":
-                dispatch(addProductCategory("Inne"));
+                dispatch(addProduct({ category: "Inne" }));
                 break;
             default:
                 break;
@@ -31,11 +28,7 @@ export const CategoryInput = () => {
     return (
         <div className="category-input">
             <label htmlFor="category">Kategoria produktu: </label>
-            <select
-                id="category"
-                onChange={handleCategory}
-                defaultValue={productCategory}
-            >
+            <select id="category" onChange={handleCategory} defaultValue={productCategory}>
                 <option disabled hidden value={productCategory}>
                     Wybierz kategorię
                 </option>
@@ -44,6 +37,7 @@ export const CategoryInput = () => {
                 <option value="software">Oprogramowanie</option>
                 <option value="other">Inne</option>
             </select>
+            <span className="error-msg">Kategoria produktu jest wymagana!</span>
         </div>
     );
 };

@@ -1,5 +1,5 @@
-import { Form } from "./components/Form";
-import { Cart } from "./components/Cart";
+import { Form } from "./components/Form/Form";
+import { Cart } from "./components/Cart/Cart";
 
 export const App = () => {
     return (

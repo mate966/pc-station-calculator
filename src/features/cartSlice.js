@@ -12,7 +12,6 @@ export const cartSlice = createSlice({
             state.cartItems = [...state.cartItems, action.payload];
         },
         deleteItemFromCart: (state, action) => {
-            console.log(action.payload);
             state.cartItems.splice(action.payload, 1);
         },
     },
