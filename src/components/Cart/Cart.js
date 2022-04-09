@@ -14,12 +14,8 @@ export const Cart = () => {
                     <th>Cena</th>
                 </tr>
             </thead>
-            <tbody>
-                <Product />
-            </tbody>
-            <tfoot>
-                <Summary />
-            </tfoot>
+            <Product />
+            <Summary />
         </table>
     );
 };

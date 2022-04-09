@@ -5,6 +5,7 @@ const initialState = {
     describe: "",
     category: "",
     price: "",
+    errors: [],
 };
 
 export const productSlice = createSlice({
@@ -14,12 +15,15 @@ export const productSlice = createSlice({
         addProduct: (state, action) => {
             Object.assign(state, action.payload);
         },
-        clearInputs: (state, action) => {
+        clearForm: (state, action) => {
             Object.assign(state, action.payload);
+        },
+        handleErrors: (state, action) => {
+            Object.assign(state.errors, action.payload);
         },
     },
 });
 
-export const { addProduct, clearInputs } = productSlice.actions;
+export const { addProduct, clearForm, handleErrors } = productSlice.actions;
 
 export default productSlice.reducer;

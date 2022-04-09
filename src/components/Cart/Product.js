@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import { deleteItemFromCart } from "../../features/cartSlice";
 
 export const Product = () => {
@@ -13,12 +14,14 @@ export const Product = () => {
     return (
         <>
             {cart.length === 0 ? (
-                <tr>
-                    <td colSpan={5}>Twój koszyk jest pusty</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td colSpan={5}>Twój koszyk jest pusty</td>
+                    </tr>
+                </tbody>
             ) : (
-                cart.map((item, id) => {
-                    return (
+                <tbody>
+                    {cart.map((item, id) => (
                         <tr className="product" key={id}>
                             <td>{id + 1}</td>
                             <td>{item.name}</td>
@@ -29,8 +32,8 @@ export const Product = () => {
                                 <button onClick={() => handleDelete(id)}>Usuń</button>
                             </td>
                         </tr>
-                    );
-                })
+                    ))}
+                </tbody>
             )}
         </>
     );

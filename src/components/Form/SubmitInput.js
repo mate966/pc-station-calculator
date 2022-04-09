@@ -1,54 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../features/cartSlice";
-import { clearInputs } from "../../features/productSlice";
+import { clearForm, handleErrors } from "../../features/productSlice";
 
 export const SubmitInput = () => {
     const dispatch = useDispatch();
     const product = useSelector(state => state.product);
-
-    // useEffect(() => {
-    //     dispatch(addNameError(""));
-    // }, [addNameError]);
-
-    // const validate = items => {
-    //     if (!items.payload.productName) {
-    //         console.log("Nazwa produktu jest wymagana!");
-    //     }
-    //     if (!items.payload.productDescribe) {
-    //         console.log("Opis produktu jest wymagany!");
-    //     }
-    //     if (!items.payload.productCategory) {
-    //         console.log("Kategoria produktu jest wymagana!");
-    //     }
-    //     if (!items.payload.productPrice) {
-    //         console.log("Cena produktu jest wymagana!");
-    //     }
-    // };
-
     const resetData = {
         name: "",
         describe: "",
         category: "",
         price: "",
+        errors: [],
     };
+
+    const validate = product => {
+        let errors = [];
+
+        if (!product.name) {
+            errors.push({ nameError: "Nazwa produktu jest wymagana!" });
+        }
+        if (!product.describe) {
+            errors.push({ describeError: "Opis produktu jest wymagany!" });
+        }
+        if (!product.category) {
+            errors.push({ categoryError: "Kategoria produktu jest wymagana!" });
+        }
+        if (!product.price) {
+            errors.push({ priceError: "Cena produktu jest wymagana!" });
+        }
+
+        if (errors.length !== 0) {
+            dispatch(handleErrors(errors));
+        } else {
+            dispatch(addItemToCart(product));
+            dispatch(clearForm(resetData));
+        }
+    };
+
+    useEffect(() => {
+        dispatch(clearForm(resetData));
+    }, []);
 
     const submitProduct = e => {
         e.preventDefault();
-        console.log(product);
-        dispatch(addItemToCart(product));
-        dispatch(clearInputs(resetData));
-
-        // validate(
-        //     dispatch(
-        //         addItemToCart({
-        //             productName: productName,
-        //             productDescribe: productDescribe,
-        //             productCategory: productCategory,
-        //             productPrice: productPrice,
-        //         })
-        //     )
-        // );
+        validate(product);
     };
 
     return <input type="submit" value="Dodaj produkt" onClick={submitProduct} />;
