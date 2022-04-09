@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+}
+
+th,
+td {
+    padding: 5px;
+    max-width: 100px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+td:first-child {
+    width: 10%;
+}
+
+td:nth-child(2) {
+    width: 25%;
+}
+
+td:last-child {
+    width: 5%;
+}
+td:nth-last-child(2) {
+    width: 5%;
+}
+td:nth-last-child(3) {
+    width: 25%;
+}
+
+.remove-item {
+    cursor: pointer;
+}

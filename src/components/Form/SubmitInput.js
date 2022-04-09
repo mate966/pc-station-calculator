@@ -16,6 +16,7 @@ export const SubmitInput = () => {
 
     const validate = product => {
         let errors = [];
+        const priceReg = /^(\d+)(,\d{1,2}|\.\d{1,2})?$/;
 
         if (!product.name) {
             errors.push({ nameError: "Nazwa produktu jest wymagana!" });
@@ -28,6 +29,10 @@ export const SubmitInput = () => {
         }
         if (!product.price) {
             errors.push({ priceError: "Cena produktu jest wymagana!" });
+        } else if (!priceReg.test(product.price)) {
+            errors.push({
+                priceError: "Cena nie może mieć więcej niż 2 miejsca po przecinku!",
+            });
         }
 
         if (errors.length !== 0) {
@@ -47,5 +52,5 @@ export const SubmitInput = () => {
         validate(product);
     };
 
-    return <input type="submit" value="Dodaj produkt" onClick={submitProduct} />;
+    return <input type="submit" value="Dodaj produkt" onClick={submitProduct} className="submit" />;
 };

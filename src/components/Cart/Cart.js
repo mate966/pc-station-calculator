@@ -4,7 +4,7 @@ import { Summary } from "./Summary";
 
 export const Cart = () => {
     return (
-        <table className="products-list">
+        <table>
             <thead>
                 <tr>
                     <th>Lp.</th>
@@ -14,7 +14,9 @@ export const Cart = () => {
                     <th>Cena</th>
                 </tr>
             </thead>
-            <Product />
+            <tbody>
+                <Product />
+            </tbody>
             <Summary />
         </table>
     );

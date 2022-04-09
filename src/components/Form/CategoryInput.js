@@ -12,6 +12,7 @@ export const CategoryInput = () => {
         { value: "software", label: "Oprogramowanie" },
         { value: "other", label: "Inne" },
     ];
+    const customStyles = {};
 
     const handleCategory = e => {
         console.log(e.value);
@@ -34,16 +35,16 @@ export const CategoryInput = () => {
     };
 
     return (
-        <div className="category-input">
-            <label htmlFor="category">Kategoria produktu: </label>
+        <div className="input-container category-input">
             <Select
+                styles={customStyles}
                 options={options}
                 onChange={e => handleCategory(e)}
                 value={
-                    !productCategory ? { label: "Wybierz kategorię" } : { label: productCategory }
+                    !productCategory ? { label: "Kategoria produktu" } : { label: productCategory }
                 }
             />
-            <span className="error-msg">{errorMsg && errorMsg}</span>
+            <span className="error-msg error-msg--category">{errorMsg && errorMsg}</span>
         </div>
     );
 };

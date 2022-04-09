@@ -12,9 +12,18 @@ export const NameInput = () => {
     };
 
     return (
-        <div className="price-input">
-            <label htmlFor="name">Nazwa produktu: </label>
-            <input type="text" id="name" onChange={handleName} value={productName} />
+        <div className="input-container name-input">
+            <input
+                type="text"
+                id="name"
+                onChange={handleName}
+                value={productName}
+                className="input"
+                required
+            />
+            <label htmlFor="name" className="label">
+                <span className="label-name">Nazwa:</span>
+            </label>
             <span className="error-msg">{errorMsg && errorMsg}</span>
         </div>
     );

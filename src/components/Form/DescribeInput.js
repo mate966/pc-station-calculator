@@ -12,9 +12,18 @@ export const DescribeInput = () => {
     };
 
     return (
-        <div className="describe-input">
-            <label htmlFor="describe">Opis produktu: </label>
-            <input type="text" id="describe" onChange={handleDescribe} value={productDescribe} />
+        <div className="input-container describe-input">
+            <input
+                type="text"
+                id="describe"
+                onChange={handleDescribe}
+                value={productDescribe}
+                className="input"
+                required
+            />
+            <label htmlFor="describe" className="label">
+                <span className="label-name">Opis produktu:</span>
+            </label>
             <span className="error-msg">{errorMsg && errorMsg}</span>
         </div>
     );

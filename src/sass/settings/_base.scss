@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(320deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 30%);
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    min-height: 80vh;
+    border-radius: 40px;
+    background: linear-gradient(318deg, rgba(255, 255, 255, 1) 0%, rgba(238, 238, 238, 1) 100%);
+    -webkit-box-shadow: 0px 13px 20px -22px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 13px 20px -22px rgba(66, 68, 90, 1);
+    box-shadow: 0px 13px 20px -22px rgba(66, 68, 90, 1);
+}
+
+.image {
+    width: 30%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background: url("../assets/background.jpg");
+    background-size: cover;
+    background-position: 70%;
+    background-repeat: no-repeat;
+}
+
+.content {
+    padding: 60px;
+    flex-grow: 1;
+}
+
+.heading {
+    margin-bottom: 10px;
+}
+
+.subheading {
+    font-size: 15px;
+}

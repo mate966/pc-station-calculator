@@ -12,9 +12,19 @@ export const PriceInput = () => {
     };
 
     return (
-        <div className="price-input">
-            <label htmlFor="price">Cena produktu: </label>
-            <input type="number" id="price" onChange={handlePrice} value={productPrice} />
+        <div className="input-container price-input">
+            <input
+                type="number"
+                id="price"
+                onChange={handlePrice}
+                value={productPrice}
+                className="input"
+                required
+                step="0.01"
+            />
+            <label htmlFor="price" className="label">
+                <span className="label-name">Cena produktu: </span>
+            </label>
             <span className="error-msg">{errorMsg && errorMsg}</span>
         </div>
     );

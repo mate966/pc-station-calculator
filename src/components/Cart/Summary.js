@@ -13,7 +13,7 @@ export const Summary = () => {
                 <th>Łącznie produktów:</th>
                 <td>{totalProducts} szt.</td>
                 <th>Razem do zapłaty:</th>
-                <td>{totalPrice}zł</td>
+                <td>{totalPrice.toFixed(2)}zł</td>
             </tr>
         </tfoot>
     );
