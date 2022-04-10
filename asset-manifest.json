@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/pc-station-calculator/static/css/main.0539f414.css",
+    "main.js": "/pc-station-calculator/static/js/main.853460d3.js",
+    "static/media/background.jpg": "/pc-station-calculator/static/media/background.f5b75e4d439f5cc5b9ad.jpg",
+    "index.html": "/pc-station-calculator/index.html",
+    "main.0539f414.css.map": "/pc-station-calculator/static/css/main.0539f414.css.map",
+    "main.853460d3.js.map": "/pc-station-calculator/static/js/main.853460d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0539f414.css",
+    "static/js/main.853460d3.js"
+  ]
+}
